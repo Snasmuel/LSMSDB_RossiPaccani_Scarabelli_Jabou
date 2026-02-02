@@ -21,7 +21,8 @@ The system is designed to run on a cluster of 3 Virtual Machines. The software r
 To generate the executable JAR file, navigate to the project directory and run the following command. This will compile the code and skip the unit tests during the build process:
 
 ```bash
-./mvnw clean package -DskipTests
+./mvnw clean package -DskipTestsà
+```
 
 ## Database Initialization
 
@@ -35,6 +36,7 @@ Once the build is complete and the infrastructure is operational, transfer the g
 
 ```bash
 java -jar lsmsdb-project/target/lsmsdb-project-0.0.1-SNAPSHOT.jar
+```
 
 ## Note on Deployment Testing
 When the application starts via the deployment command above, an automatic end-to-end test script is executed. Unlike the initialization script, this test sequence does not clear the database, preserving the existing state.
