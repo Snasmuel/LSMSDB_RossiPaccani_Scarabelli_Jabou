@@ -22,3 +22,19 @@ To generate the executable JAR file, navigate to the project directory and run t
 
 ```bash
 ./mvnw clean package -DskipTests
+
+## Database Initialization
+
+To populate the system with the initial dataset, execute the loadDb.sh script.
+
+* **Important**: This script performs a cleanup operation first. It deletes all existing data in the databases before loading the files found in the DataSet folder.
+
+## Running the Application
+
+Once the build is complete and the infrastructure is operational, transfer the generated JAR file to the **Primary VM**. Execute the application using the following command:
+
+```bash
+java -jar lsmsdb-project/target/lsmsdb-project-0.0.1-SNAPSHOT.jar
+
+## Note on Deployment Testing
+When the application starts via the deployment command above, an automatic end-to-end test script is executed. Unlike the initialization script, this test sequence does not clear the database, preserving the existing state.
